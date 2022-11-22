@@ -1,0 +1,35 @@
+.button {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  width: 216px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--white-color);
+  background: var(--active-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  transition: box-shadow var(--transition-delay) cubic-bezier(0.4, 0, 0.2, 1),
+    background-color var(--transition-delay) cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    background-color: #188ae8c7;
+  }
+  &:active {
+    background-color: #188ce8;
+  }
+  &__signed {
+    width: 200px;
+  }
+}

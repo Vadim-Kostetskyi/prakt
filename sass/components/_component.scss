@@ -1,0 +1,44 @@
+.social {
+  justify-content: center;
+
+  &__item:not(:last-child) {
+    margin-right: 10px;
+  }
+  &__svg {
+    width: 20px;
+    height: 20px;
+    fill: #afb1b8;
+
+    transition: fill var(--transition-delay) cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--white-color);
+
+    transition: background-color var(--transition-delay)
+      cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &__link:hover,
+  &__link:focus {
+    background-color: var(--active-color);
+  }
+  &__link:hover &__svg,
+  &__link:focus &__svg {
+    fill: var(--white-color);
+  }
+  &__link--grey {
+    background-color: hwb(0 100% 0% / 0.1);
+  }
+  &__svg--white {
+    fill: var(--white-color);
+  }
+}
+
+label {
+  display: block;
+}

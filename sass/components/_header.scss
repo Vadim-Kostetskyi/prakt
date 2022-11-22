@@ -1,0 +1,141 @@
+.header {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #ececec;
+  @media screen and(min-width: 1200px) {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__menu {
+    @media screen and(min-width: 767px) {
+      display: none;
+    }
+    background-color: var(--white-color);
+    border: 0;
+  }
+}
+
+.nav {
+  display: flex;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+
+  &__item:not(:last-child) {
+    margin-right: 50px;
+  }
+  &__link {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    position: relative;
+    transition: color var(--transition-delay) cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus,
+    &:hover {
+      color: var(--active-color);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 4px;
+      background-color: var(--active-color);
+      border-radius: 2px;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  &__list {
+    @media screen and(max-width: 767px) {
+      display: none;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.active {
+  color: var(--active-color);
+
+  &::after {
+    content: "";
+    width: 100%;
+  }
+}
+.noactive {
+  color: var(--text);
+}
+
+.contact {
+  @media screen and(max-width: 767px) {
+    display: none;
+  }
+
+  &__lists {
+    flex-wrap: wrap;
+    padding-top: 21px;
+    padding-bottom: 17px;
+    width: 136px;
+
+    @media screen and(min-width: 1294px) {
+      padding-top: 0;
+      padding-bottom: 0;
+      width: 100%;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+
+    @media screen and (min-width: 1294px) {
+      padding-top: 32px;
+      padding-bottom: 32px;
+      justify-content: center;
+    }
+
+    color: var(--green-color);
+
+    transition: color var(--transition-delay) cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__link:focus,
+  &__link:hover {
+    color: var(--active-color);
+  }
+
+  &__item:first-child {
+    @media screen and (max-width: 1200px) {
+      margin-bottom: 10px;
+    }
+    @media screen and(min-width:1294px) {
+      margin-right: 50px;
+    }
+  }
+  &__item:last-child {
+    width: 142px;
+  }
+
+  &__svg {
+    justify-items: center;
+    align-content: center;
+    margin-right: 10px;
+    fill: var(--green-color);
+
+    transition: fill var(--transition-delay) cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &__link:focus &__svg,
+  &__link:hover &__svg {
+    fill: var(--active-color);
+  }
+}
